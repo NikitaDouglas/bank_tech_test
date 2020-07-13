@@ -1,9 +1,10 @@
 class Account
 
   attr_accessor :balance
+  DEFAULT_BALANCE = 0
 
-  def initialize
-    @balance = 0
+  def initialize(balance = DEFAULT_BALANCE)
+    @balance = balance
   end
 
   def deposit(amount)
@@ -11,7 +12,7 @@ class Account
   end
 
   def withdraw(amount)
-    return "You don't have enough money in your account to withdraw that much." if (@balance - amount < 0)
+    return "You don't have enough money in your account to withdraw that much." if (@balance - amount < DEFAULT_BALANCE)
     @balance -= amount
   end
 end

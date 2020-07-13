@@ -10,7 +10,7 @@ describe "Account" do
   end
 
   it "should instantiate with a balance of zero" do
-    expect(account.balance).to eq 0
+    expect(account.balance).to eq Account::DEFAULT_BALANCE
   end
 
   describe "#deposit" do
