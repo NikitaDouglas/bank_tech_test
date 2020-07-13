@@ -16,7 +16,7 @@ describe "Account" do
   describe "#deposit" do
     it "should increase the balance by a specified amount" do
       [10, 100, 1000].each do |amount|
-      expect { account.deposit(amount) }.to change { account.balance }.by amount
+        expect { account.deposit(amount) }.to change { account.balance }.by amount
       end
     end
   end
