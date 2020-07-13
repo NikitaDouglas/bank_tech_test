@@ -1,0 +1,80 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/nikita/Developer/Projects/FullCourse/Week10/bank_tech_test/spec/account_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          5,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          12,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          12,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/nikita/Developer/Projects/FullCourse/Week10/bank_tech_test/lib/account.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          5,
+          null,
+          null,
+          1,
+          4,
+          null,
+          null,
+          1,
+          4,
+          3,
+          null,
+          null,
+          1,
+          null,
+          1,
+          4,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      }
+    },
+    "timestamp": 1594645771
+  }
+}
