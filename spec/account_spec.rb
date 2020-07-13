@@ -12,4 +12,10 @@ describe "Account" do
   it "should instantiate with a balance of zero" do
     expect(account.balance).to eq 0
   end
+
+  describe "#deposit" do
+    it "should increase the balance by a specified amount" do
+      expect { account.deposit(10) }.to change { account.balance }.by 10
+    end
+  end
 end
