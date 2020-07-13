@@ -8,4 +8,8 @@ describe "Account" do
     account = Account.new 
     expect(account).to be_instance_of(Account)
   end
+
+  it "should instantiate with a balance of zero" do
+    expect(account.balance).to eq 0
+  end
 end
