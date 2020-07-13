@@ -25,7 +25,7 @@ describe "Account" do
     it "should decrease the balance by a specified amount" do
       account.deposit(1000)
       [10, 100, 1000].each do |amount|
-        expect { account.withdraw(amount) }.to change { account.balance }.by -amount
+        expect { account.withdraw(amount) }.to change { account.balance }.by(-amount)
       end
     end
   end
