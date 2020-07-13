@@ -23,10 +23,15 @@ describe "Account" do
 
   describe "#withdraw" do
     it "should decrease the balance by a specified amount" do
-      account.deposit(1000)
+      account.deposit(2000)
       [10, 100, 1000].each do |amount|
         expect { account.withdraw(amount) }.to change { account.balance }.by(-amount)
       end
+    end
+
+    it "should return an apt message when a withdrawal exceeds the user's balance" do
+      message = "You don't have enough money in your account to withdraw that much."
+      expect(account.withdraw(10)).to eq message
     end
   end
 end

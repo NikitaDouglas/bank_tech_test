@@ -11,7 +11,7 @@ class Account
   end
 
   def withdraw(amount)
+    return "You don't have enough money in your account to withdraw that much." if (@balance - amount < 0)
     @balance -= amount
   end
-
 end
