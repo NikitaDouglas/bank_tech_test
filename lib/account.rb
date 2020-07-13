@@ -17,7 +17,9 @@ class Account
 
   def withdraw(amount)
     return insufficient_funds_message if insufficient_funds?(amount)
+    
     @balance -= amount
+    @transaction_history.add_transaction(Time.now, -amount)
   end
 
   private
