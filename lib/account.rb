@@ -12,7 +12,11 @@ class Account
   end
 
   def withdraw(amount)
-    return "You don't have enough money in your account to withdraw that much." if (@balance - amount < DEFAULT_BALANCE)
+    return "You don't have enough money in your account to withdraw that much." if insufficient_funds?(amount)
     @balance -= amount
+  end
+
+  def insufficient_funds?(amount)
+    @balance - amount < DEFAULT_BALANCE
   end
 end
