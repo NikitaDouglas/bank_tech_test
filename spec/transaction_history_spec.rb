@@ -14,15 +14,15 @@ describe "TransactionHistory" do
 
   describe "#add_transaction" do
     it "adds date, amount, and balance of deposit to transaction_history of account" do
-      expect{ add_transaction_deposit }
-      .to change{ transaction_history.history }
-      .to([{:date => test_time, :amount => 1000, :balance => 1000}])
+      expect { add_transaction_deposit }
+      .to change { transaction_history.history }
+      .to([{ :date => test_time, :amount => 1000, :balance => 1000 }])
     end
 
     it "adds date, amount, and balance of withdrawal to transaction_history of account" do
-      expect{ add_transaction_withdrawal }
-      .to change{ transaction_history.history }
-      .to([{:date => test_time, :amount => -1000, :balance => 0}])
+      expect { add_transaction_withdrawal }
+      .to change { transaction_history.history }
+      .to([{ :date => test_time, :amount => -1000, :balance => 0 }])
     end
   end
 end
