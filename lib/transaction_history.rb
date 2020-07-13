@@ -1,4 +1,4 @@
-class Transaction
+class TransactionHistory
 
   attr_accessor :history
 
