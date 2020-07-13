@@ -12,14 +12,14 @@ class Account
 
   def deposit(amount)
     @balance += amount
-    @transaction_history.add_transaction(Time.now, amount)
+    @transaction_history.add_transaction(Time.now, amount, @balance)
   end
 
   def withdraw(amount)
     return insufficient_funds_message if insufficient_funds?(amount)
     
     @balance -= amount
-    @transaction_history.add_transaction(Time.now, -amount)
+    @transaction_history.add_transaction(Time.now, -amount, @balance)
   end
 
   private

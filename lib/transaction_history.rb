@@ -6,8 +6,8 @@ class TransactionHistory
     @history = []
   end
 
-  def add_transaction(date, amount)
-    @history.push({:date => date, :amount => amount})
+  def add_transaction(date, amount, balance)
+    @history.push({:date => date, :amount => amount, :balance => balance})
   end
 
 end
