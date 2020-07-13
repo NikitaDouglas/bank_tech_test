@@ -1,8 +1,11 @@
 require "account"
 
 describe "Account" do
+
+  subject(:account) { Account.new }
+
   it "should be able to be initialised" do
-    a = Account.new 
-    expect(a).to be_instance_of(Account)
+    account = Account.new 
+    expect(account).to be_instance_of(Account)
   end
 end
