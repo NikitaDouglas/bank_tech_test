@@ -13,6 +13,10 @@ describe "Account" do
     expect(account.balance).to eq Account::DEFAULT_BALANCE
   end
 
+  it "should instatiates with a transaction" do
+    expect(account.transaction_history.history).to eq []
+  end
+
   describe "#deposit" do
     it "should increase the balance by a specified amount" do
       [10, 100, 1000].each do |amount|
