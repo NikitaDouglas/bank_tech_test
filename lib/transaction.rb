@@ -1,9 +1,10 @@
 class Transaction
 
-attr_accessor :date, :credit
+attr_accessor :date, :credit, :debit
 
-  def initialize(credit, date = Time.now)  
+  def initialize(credit, debit, date = Time.now)  
     @date = date
     @credit = credit
+    @debit = debit
   end
 end
