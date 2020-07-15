@@ -22,7 +22,7 @@ describe "TransactionHistory" do
     it "adds date, amount, and balance of withdrawal to transaction_history of account" do
       expect { add_transaction_withdrawal }
       .to change { transaction_history.history }
-      .to([{ :date => test_time, :credit => 1000, :debit => :-, :balance => 1000 }])
+      .to([{ :date => test_time, :credit => 1000, :debit => :-, :balance => 0 }])
     end
 
     it "adds amount as debit if amount is positive" do
