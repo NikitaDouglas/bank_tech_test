@@ -11,7 +11,7 @@ describe "Formatter" do
     Timecop.freeze(test_time)
   end
 
-  it "formats the transaction history into an array" do
+  it "formats the transaction history into a statement" do
 
     transaction_double = double(:transaction)
     
@@ -23,6 +23,6 @@ describe "Formatter" do
     transaction_history = [transaction_double]
 
     expect(formatter.format(transaction_history))
-    .to eq ["Date || Credit || Debit || Balance", "#{test_time} || 0 || 1000 || 1000"]
-  end
+    .to eq ["Date || Credit || Debit || Balance", "#{test_time} || 0.00 || 1000.00 || 1000.00"]
+  end 
 end
