@@ -7,6 +7,11 @@ class TransactionHistory
   end
 
   def add_transaction(date, amount, balance)
-    @history.push({ :date => date, :amount => amount, :balance => balance })
+    if amount > 0
+      @history.push({ :date => date, :credit => :-, :debit => amount, :balance => balance })
+    else 
+      absolute_value = amount.abs
+      @history.push({ :date => date, :credit => absolute_value, :debit => :-, :balance => balance })
+    end
   end
 end

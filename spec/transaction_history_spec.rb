@@ -16,13 +16,19 @@ describe "TransactionHistory" do
     it "adds date, amount, and balance of deposit to transaction_history of account" do
       expect { add_transaction_deposit }
       .to change { transaction_history.history }
-      .to([{ :date => test_time, :amount => 1000, :balance => 1000 }])
+      .to([{ :date => test_time, :credit => :-, :debit => 1000, :balance => 1000 }])
     end
 
     it "adds date, amount, and balance of withdrawal to transaction_history of account" do
       expect { add_transaction_withdrawal }
       .to change { transaction_history.history }
-      .to([{ :date => test_time, :amount => -1000, :balance => 0 }])
+      .to([{ :date => test_time, :credit => 1000, :debit => :-, :balance => 1000 }])
+    end
+
+    it "adds amount as debit if amount is positive" do
+      expect { add_transaction_deposit }
+      .to change { transaction_history.history }
+      .to([{ :date => test_time, :credit => :-, :debit => 1000, :balance => 1000 }])
     end
   end
 end
