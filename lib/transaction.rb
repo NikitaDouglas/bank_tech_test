@@ -1,6 +1,6 @@
 class Transaction
 
-attr_accessor :date, :credit, :debit, :balance
+  attr_accessor :date, :credit, :debit, :balance
 
   def initialize(credit, debit, balance, date = Time.now)  
     @date = date
