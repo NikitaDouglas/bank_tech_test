@@ -2,7 +2,60 @@
 
 ## How to use the Bank?
 
+### Use the Script
+
+Please run the following commands in your terminal to download and install the script:
+
+```
+git clone <git@github.com:NikitaDouglas/acebook-Kindred.git>
+bundle install
+```
+
+To play around with the script, run the following commands:
+
+```
+# To open the script in a REPL:
+irb -r ./lib/account.rb
+
+# To create a new account:
+account = Account.new
+
+# To deposit money in your account:
+account.deposit(<amount>)
+
+# To withdraw money from your account:
+account.withdraw(<amount>)
+
+# To see your account statement:
+account.see_statement
+
+```
+
+### Run the Tests
+
+Run the following command from the root directory of the script.
+
+```
+rspec
+```
+
 ## How I built the Bank?
+
+I built this script in response to the Makers Academy Bank Tech Test. I began by creating user stories from the requirements listed in the challenge, and then I created a sequence diagram to plan out how my script would function:
+
+SEQUENCE DIAGRAM 1
+
+I then test-drove the creation of the Account class with two methods, `deposit` and `withdraw`, to satisy the first and third user stories. After that I created the TransactionHistory class which contained a method `add_transaction`, to add a hash to the `@history` array. I then used dependency injection to initalize my account with an instance of TransactionHistory, so the `deposit` and `withdraw` added a new transaction to the `@history` array. 
+
+However, I then realised that it would be prefarable, rather than creating an array of hashes to store my transaction data as objects in an array. I deleted the TransactionHistory class and created a new Transaction class - now my `deposit` and `withdraw` methods create a new instance of the Transaction class and store it in the `@transaction_history` array. I created a new sequence diagram to show these changes:
+
+SEQUENCE DIAGRAM 2
+
+I used the Timecop gem to mock time in my tests, as the script uses `Time.now` to record the time the user deposits and withdrawals in order to satisfy the second user story. 
+
+Next, I created the Formatter class and mocked the input that would come from the Account class, stubbing the instance methods for the Transaction objects. I also created two private methods to format the date and the amounts. I used dependency injection to create a new instance of the Formatter class when the account class is created. The `see_statement` method satisfies the fourth user story by puts'ing the array returned by the Formatter class into standard output. 
+
+Unfortunately, I did not have time to satisfy the last user story and create a menu to allow easier interaction with the Bank. 
 
 ## User Stories
 
