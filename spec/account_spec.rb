@@ -13,8 +13,8 @@ describe "Account" do
     expect(account.balance).to eq Account::DEFAULT_BALANCE
   end
 
-  it "should instatiates with a transaction" do
-    expect(account.transaction_history.history).to eq []
+  it "should instatiates with a transaction history" do
+    expect(account.transaction_history).to eq []
   end
 
   describe "#deposit" do

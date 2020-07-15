@@ -5,21 +5,19 @@ class Account
   attr_accessor :balance, :transaction_history
   DEFAULT_BALANCE = 0
 
-  def initialize(balance = DEFAULT_BALANCE, transaction_history = TransactionHistory.new)
+  def initialize(balance = DEFAULT_BALANCE)
     @balance = balance
-    @transaction_history = transaction_history
+    @transaction_history = []
   end
 
   def deposit(amount)
     @balance += amount
-    @transaction_history.add_transaction(Time.now, amount, @balance)
   end
 
   def withdraw(amount)
     return insufficient_funds_message if insufficient_funds?(amount)
     
     @balance -= amount
-    @transaction_history.add_transaction(Time.now, -amount, @balance)
   end
 
   private
