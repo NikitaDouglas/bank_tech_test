@@ -1,4 +1,5 @@
 require "account"
+require "timecop"
 
 describe "Account" do
 
@@ -47,6 +48,21 @@ describe "Account" do
     it "adds a new transaction to history array when a withdrawal is made" do
       account.deposit(1000)
       expect { account.withdraw(10) }.to change { account.transaction_history.length }.by 1
+    end
+  end
+
+  describe "#see_statement" do
+
+    let(:test_time) { Time.local(2020, 7, 13) }
+
+    it "outputs the history array to standard output" do
+
+      Timecop.freeze(test_time)
+
+      account.deposit(1000)
+
+      expect { account.see_statement }
+      .to output("Date || Credit || Debit || Balance\n#{test_time} || 0.00 || 1000.00 || 1000.00\n").to_stdout
     end
   end
 end

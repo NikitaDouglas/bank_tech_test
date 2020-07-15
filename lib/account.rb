@@ -1,13 +1,15 @@
 require_relative 'transaction'
+require 'formatter'
 
 class Account
 
   attr_accessor :balance, :transaction_history
   DEFAULT_BALANCE = 0
 
-  def initialize(balance = DEFAULT_BALANCE)
+  def initialize(balance = DEFAULT_BALANCE, formatter = Formatter.new)
     @balance = balance
     @transaction_history = []
+    @formatter = formatter
   end
 
   def deposit(amount)
@@ -20,6 +22,10 @@ class Account
     
     @balance -= amount
     add_credit_transaction(amount)
+  end
+
+  def see_statement
+    puts @formatter.format(@transaction_history)
   end
 
   private
