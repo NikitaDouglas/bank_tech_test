@@ -11,7 +11,7 @@ class Formatter
   private
 
   def format_integer(amount)
-     "%.2f" % amount
+    "%.2f" % amount
   end
 
   def format_date(date)
