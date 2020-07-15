@@ -62,7 +62,7 @@ describe "Account" do
       account.deposit(1000)
 
       expect { account.see_statement }
-      .to output("Date || Credit || Debit || Balance\n#{test_time} || 0.00 || 1000.00 || 1000.00\n").to_stdout
+      .to output("Date || Credit || Debit || Balance\n13/07/2020 || 0.00 || 1000.00 || 1000.00\n").to_stdout
     end
   end
 end

@@ -4,7 +4,7 @@ require 'timecop'
 describe "Formatter" do
 
   subject(:formatter) { Formatter.new }
-  let(:test_time) { Time.local(2020, 7, 13) } 
+  let(:test_time) { Time.local(2020, 7, 13) }
 
   before do
     Timecop.freeze(test_time)
@@ -22,6 +22,6 @@ describe "Formatter" do
     transaction_history = [transaction_double]
 
     expect(formatter.format(transaction_history))
-    .to eq ["Date || Credit || Debit || Balance", "#{test_time} || 0.00 || 1000.00 || 1000.00"]
+    .to eq ["Date || Credit || Debit || Balance", "13/07/2020 || 0.00 || 1000.00 || 1000.00"]
   end 
 end
