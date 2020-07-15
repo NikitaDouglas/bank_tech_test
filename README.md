@@ -61,7 +61,7 @@ Unfortunately, I did not have time to satisfy the last user story and create a m
 
 Here's an image of the app running in IRB:
 
-![bank_tech_test_running]()
+![bank_tech_test_running](https://github.com/NikitaDouglas/bank_tech_test/blob/master/images/bank_tech_test_running.png)
 
 ## User Stories
 
