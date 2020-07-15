@@ -1,5 +1,5 @@
 require_relative 'transaction'
-require 'formatter'
+require_relative 'formatter'
 
 class Account
 
