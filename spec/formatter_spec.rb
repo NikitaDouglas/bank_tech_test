@@ -4,8 +4,7 @@ require 'timecop'
 describe "Formatter" do
 
   subject(:formatter) { Formatter.new }
-  let(:test_time) { Time.local(2020, 7, 13) }
-  # let(:transaction_double) { double(:transaction) }
+  let(:test_time) { Time.local(2020, 7, 13) } 
 
   before do
     Timecop.freeze(test_time)
