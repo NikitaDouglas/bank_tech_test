@@ -43,13 +43,13 @@ rspec
 
 I built this script in response to the Makers Academy Bank Tech Test. I began by creating user stories from the requirements listed in the challenge, and then I created a sequence diagram to plan out how my script would function:
 
-SEQUENCE DIAGRAM 1
+![Bank_Tech_Test_Sequence_Diagram_1](https://github.com/NikitaDouglas/bank_tech_test/blob/master/images/bank_tech_test_sequence_1.png)
 
 I then test-drove the creation of the Account class with two methods, `deposit` and `withdraw`, to satisy the first and third user stories. After that I created the TransactionHistory class which contained a method `add_transaction`, to add a hash to the `@history` array. I then used dependency injection to initalize my account with an instance of TransactionHistory, so the `deposit` and `withdraw` added a new transaction to the `@history` array. 
 
 However, I then realised that it would be prefarable, rather than creating an array of hashes to store my transaction data as objects in an array. I deleted the TransactionHistory class and created a new Transaction class - now my `deposit` and `withdraw` methods create a new instance of the Transaction class and store it in the `@transaction_history` array. I created a new sequence diagram to show these changes:
 
-SEQUENCE DIAGRAM 2
+![Bank_Tech_Test_Sequence_Diagram_3](https://github.com/NikitaDouglas/bank_tech_test/blob/master/images/bank_tech_test_sequence_3.png)
 
 I used the Timecop gem to mock time in my tests, as the script uses `Time.now` to record the time the user deposits and withdrawals in order to satisfy the second user story. 
 
@@ -59,6 +59,7 @@ Unfortunately, I did not have time to satisfy the last user story and create a m
 
 ## User Stories
 
+```
 As a customer of the bank
 So I can keep my money safe
 I would like to make a deposit into my bank account. 
@@ -77,8 +78,9 @@ I want to see when money has been moved in or out of my bank account.
 
 As a customer of the bank
 So it's easy for me to interact with my bank,
-I want to see a menu of options for what I can do. 
+I want to see a menu of options for what I can do.
 
 # Edge Case
 
-- Error message when a wthdrawal would take a customer into the red.
+- a customer might want to know when their withdrawal isn't possible due to insufficient funds.
+```
