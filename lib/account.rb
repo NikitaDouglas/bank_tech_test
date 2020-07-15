@@ -19,6 +19,7 @@ class Account
     return insufficient_funds_message if insufficient_funds?(amount)
     
     @balance -= amount
+    @transaction_history << Transaction.new(amount, 0, @balance)
   end
 
   private

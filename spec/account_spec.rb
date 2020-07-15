@@ -43,5 +43,10 @@ describe "Account" do
     it "adds a new transaction to history array when a deposit is made" do
       expect { account.deposit(10) }.to change { account.transaction_history.length }.by 1
     end
+
+    it "adds a new transaction to history array when a withdrawal is made" do
+      account.deposit(1000)
+      expect { account.withdraw(10) }.to change { account.transaction_history.length }.by 1
+    end
   end
 end
