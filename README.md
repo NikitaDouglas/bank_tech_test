@@ -45,9 +45,9 @@ I built this script in response to the Makers Academy Bank Tech Test. I began by
 
 ![Bank_Tech_Test_Sequence_Diagram_1](https://github.com/NikitaDouglas/bank_tech_test/blob/master/images/bank_tech_test_sequence_1.png)
 
-I then test-drove the creation of the Account class with two methods, `deposit` and `withdraw`, to satisy the first and third user stories. After that I created the TransactionHistory class which contained a method `add_transaction`, to add a hash to the `@history` array. I then used dependency injection to initalize my account with an instance of TransactionHistory, so the `deposit` and `withdraw` added a new transaction to the `@history` array. 
+I then test-drove the creation of the Account class with two methods, `deposit` and `withdraw`, to satisfy the first and third user stories. After that I created the TransactionHistory class which contained a method `add_transaction`, to add a hash to the `@history` array. I then used dependency injection to initialize my account with an instance of TransactionHistory, so the `deposit` and `withdraw` added a new transaction to the `@history` array. 
 
-However, I then realised that it would be prefarable, rather than creating an array of hashes to store my transaction data as objects in an array. I deleted the TransactionHistory class and created a new Transaction class - now my `deposit` and `withdraw` methods create a new instance of the Transaction class and store it in the `@transaction_history` array. I created a new sequence diagram to show these changes:
+However, I then realised that it would be preferable, rather than creating an array of hashes to store my transaction data as objects in an array. I deleted the TransactionHistory class and created a new Transaction class - now my `deposit` and `withdraw` methods create a new instance of the Transaction class and store it in the `@transaction_history` array. I created a new sequence diagram to show these changes:
 
 ![Bank_Tech_Test_Sequence_Diagram_3](https://github.com/NikitaDouglas/bank_tech_test/blob/master/images/bank_tech_test_sequence_3.png)
 
@@ -70,7 +70,7 @@ I'd like to use the actual date when recording a customer's deposits and withdra
 
 As a customer of the bank
 So I can buy things
-I would like to be able do withdraw from my bank account. 
+I would like to be able to withdraw from my bank account. 
 
 As a customer of the bank
 So I can get control of my money
