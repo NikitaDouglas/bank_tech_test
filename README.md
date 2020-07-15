@@ -7,7 +7,7 @@
 Please run the following commands in your terminal to download and install the script:
 
 ```
-git clone <git@github.com:NikitaDouglas/acebook-Kindred.git>
+git clone <git@github.com:NikitaDouglas/bank_tech_test.git>
 bundle install
 ```
 
@@ -56,6 +56,12 @@ I used the Timecop gem to mock time in my tests, as the script uses `Time.now` t
 Next, I created the Formatter class and mocked the input that would come from the Account class, stubbing the instance methods for the Transaction objects. I also created two private methods to format the date and the amounts. I used dependency injection to create a new instance of the Formatter class when the account class is created. The `see_statement` method satisfies the fourth user story by puts'ing the array returned by the Formatter class into standard output. 
 
 Unfortunately, I did not have time to satisfy the last user story and create a menu to allow easier interaction with the Bank. 
+
+## Running the App
+
+Here's an image of the app running in IRB:
+
+![bank_tech_test_running]()
 
 ## User Stories
 
