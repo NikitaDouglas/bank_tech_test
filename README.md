@@ -41,7 +41,7 @@ rspec
 
 ## How I built the Bank?
 
-I built this script in response to the Makers Academy Bank Tech Test. I began by creating user stories from the requirements listed in the challenge, and then I created a sequence diagram to plan out how my script would function:
+I built this script in response to the [Makers Academy Bank Tech Test](https://github.com/NikitaDouglas/bank_tech_test/blob/master/CHALLENGE.md). I began by creating [user stories](https://github.com/NikitaDouglas/bank_tech_test#user-stories) from the requirements listed in the challenge, and then I created a sequence diagram to plan out how my script would function:
 
 ![Bank_Tech_Test_Sequence_Diagram_1](https://github.com/NikitaDouglas/bank_tech_test/blob/master/images/bank_tech_test_sequence_1.png)
 
