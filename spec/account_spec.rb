@@ -38,4 +38,10 @@ describe "Account" do
       expect(account.withdraw(10)).to eq message
     end
   end
+
+  describe "interface with Transaction class" do
+    it "adds a new transaction to history array when a deposit is made" do
+      expect { account.deposit(10) }.to change { account.transaction_history.length }.by 1
+    end
+  end
 end

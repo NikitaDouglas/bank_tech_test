@@ -12,6 +12,7 @@ class Account
 
   def deposit(amount)
     @balance += amount
+    @transaction_history << Transaction.new(0, amount, @balance)
   end
 
   def withdraw(amount)
